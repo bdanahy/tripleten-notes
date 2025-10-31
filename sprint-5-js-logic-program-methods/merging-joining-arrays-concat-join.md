@@ -1,6 +1,6 @@
 # **Merging and Joining Arrays:** _concat() and join()_
 
-### Joining arrays with concat() method
+### Joining arrays with _concat()_ method
 
 ```js
 const toDoList = ["Plant tree", "Build house"];
@@ -28,11 +28,17 @@ console.log(allStudents);
 you can pass another array as an argument. elements of array will be copied and added to new array:
 
 ```js
-const washingtonDCAttractions = ["The Lincoln Memorial", "United States Capitol"];
+const washingtonDCAttractions = [
+  "The Lincoln Memorial",
+  "United States Capitol",
+];
 const newYorkAttractions = ["Metropolitan Museum of Art", "Broadway"];
 const sanFranciscoAttractions = ["Golden Gate Bridge", "Chinatown"];
 
-const usaAttractions = washingtonDCAttractions.concat(newYorkAttractions, sanFranciscoAttractions);
+const usaAttractions = washingtonDCAttractions.concat(
+  newYorkAttractions,
+  sanFranciscoAttractions
+);
 
 // will return a new array containing all the values of the original arrays
 
@@ -52,5 +58,45 @@ console.log(usaAttractions);
 
 **The concat() method doesn't change the original array, it returns a new one. Any changes you make to the new array won't affect the original array.**
 
-*******
+---
 
+### Convert array to string with _join()_ method
+
+concatenates elements of array, returns new string
+
+```js
+const theBeatles = [
+  "John Lennon",
+  "Paul McCartney",
+  "Ringo Starr",
+  "George Harrison",
+];
+
+console.log(theBeatles.join());
+
+// "John Lennon,Paul McCartney,Ringo Starr,George Harrison"
+
+console.log(`Introducing the Beatles: ${theBeatles.join(", ")}`);
+// "Introducing the Beatles: John Lennon, Paul McCartney, Ringo Starr, George Harrison"
+
+// notice that the original array still looks exactly the same:
+console.log(theBeatles);
+// ["John Lennon", "Paul McCartney", "Ringo Starr", "George Harrison"]
+```
+
+if no argument passed to join(), elements separated by comma, NO whitespace
+
+can use any string as separator:
+
+```js
+const theBeatles = [
+  "John Lennon",
+  "Paul McCartney",
+  "Ringo Starr",
+  "George Harrison",
+];
+
+console.log(theBeatles.join(" | "));
+
+// "John Lennon | Paul McCartney | Ringo Starr | George Harrison"
+```
