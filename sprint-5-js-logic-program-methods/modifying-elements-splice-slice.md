@@ -134,11 +134,13 @@ console.log(monthsCopy);
 
 ### _splice()_: **removes** elements from array, **replaces** them with new ones
 
-**first arg** specifies which index to start removing elements
+---_also returns an array of removed elements_
 
-**second arg** specifies number of elements to remove
+#### **first arg** specifies which index to start removing elements
 
-**all args thereafter** specify what to replace them with.
+#### **second arg** specifies number of elements to remove
+
+#### **all args thereafter** specify what to replace them with.
 
 ---_can be as many as you want, including 0_
 
@@ -179,7 +181,7 @@ planets.splice(2, 1); // ["Earth"]
 console.log(planets); // ["Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
 ```
 
-can also add new elements without removin any:
+can also add new elements without removing any:
 
 ```js
 const planets = [
