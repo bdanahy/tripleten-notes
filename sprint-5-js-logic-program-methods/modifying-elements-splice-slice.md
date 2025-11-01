@@ -1,14 +1,14 @@
 # **Modifying Elements at Specific Positions:** _splice()_ and _slice()_
 
-### Retrieving segment of array with _slice()_ method
+## Retrieving segment of array with _slice()_ method
 
-copies part of array, creates new array
+### _slice()_ **copies** part of array, creates **new** array
 
 takes 2 args:
 
--index where new array begins
+---index where new array begins
 
--index where it ends, excluding that element
+---index where it ends, excluding that element
 
 (same as with slicing strings, array is sliced at indices provided in args, and new array includes elements between the 2 slices)
 
@@ -128,4 +128,70 @@ console.log(monthsCopy);
     "December"
   ]
 */
+```
+
+## Replace array elements with _splice()_ method
+
+### _splice()_: **removes** elements from array, **replaces** them with new ones
+
+**first arg** specifies which index to start removing elements
+
+**second arg** specifies number of elements to remove
+
+**all args thereafter** specify what to replace them with.
+
+---_can be as many as you want, including 0_
+
+```js
+const week = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday"
+];
+
+// starting from index 0, delete five elements and replace them with these five elements
+const removedItems = week.splice(0, 5, "Sunday", "Saturday", "Sunday", "Saturday", "Sunday");
+
+console.log(removedItems); // ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+
+console.log(week); // ["Sunday", "Saturday", "Sunday", "Saturday", "Sunday", "Saturday", "Sunday"]
+```
+
+don't have to replace elements:
+
+```js
+const planets = [
+  "Mercury",
+  "Venus",
+  "Earth",
+  "Mars",
+  "Jupiter",
+  "Saturn",
+  "Uranus",
+  "Neptune"
+];
+
+planets.splice(2, 1); // ["Earth"]
+console.log(planets); // ["Mercury", "Venus", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+```
+
+can also add new elements without removin any:
+
+```js
+const planets = [
+  "Mercury",
+  "Venus",
+  "Mars",
+  "Jupiter",
+  "Saturn",
+  "Uranus",
+  "Neptune"
+];
+
+planets.splice(2, 0, "Earth"); // []
+console.log(planets); // ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
 ```
